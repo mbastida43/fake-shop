@@ -20,18 +20,14 @@ jobs:
       -name: Construção da imagem Docker
        run: echo "Executando o comando Docker build"
 
-         name: build and push
-         uses: docker/build-push-action@v6
-         with:
-            context: .
-            push: true
-            tags: user/app:latest
+       name: build and push
+       uses: docker/build-push-action@v6
+       with:
+        context: .
+        push: true
+        tags: user/app:latest
 
-       
-      -name: Envio da imagem Docker
-       run: echo "Executando o comando Docker push"
 
-       -
 
   cd:
     run ons: ubuntu-latest
