@@ -31,7 +31,7 @@ metadata:
   name: postgre
 spec:
   selector:
-    app: posgre
+    app: postgre
   ports:
   - port: 5432
     targetPort: 5432
