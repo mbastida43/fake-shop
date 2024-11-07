@@ -1,3 +1,4 @@
+# Deployment do Banco de Dados
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,10 +20,8 @@ spec:
           env:
             - name: POSTGRES__DB
               value: fakeshop
-          env:
             - name: POSTFRES_USER           
               value: fakeshop
-          env:
             - name: POSTGRES_PASSWORD
               value: Pg1234
 ---
@@ -37,3 +36,46 @@ spec:
   - port: 5432
     targetPort: 5432
 
+---
+# Deployment da Aplicação Web
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fakeshop
+spec:
+  selector:
+    matchLabels:
+      app: fakeshop
+  template:
+    metadata:
+      labels: 
+        app: fakeshop
+    spec: 
+      containers:
+        - name: fakeshop
+          image: marlonbastida/fake-shop:v1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              value: postgre
+            - name: DB_USER           
+              value: fakeshop
+            - name: DB_PASSWORD
+              value: Pg1234
+            - name: DB_NAME
+              value: fakeshop
+            - name: FLASK_APP
+              value: index.py
+
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: postgre
+spec:
+  selector:
+    app: posgre
+  ports:
+  - port: 5432
+    targetPort: 5432
