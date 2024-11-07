@@ -72,10 +72,11 @@ spec:
 apiVersion: v1 
 kind: Service
 metadata:
-  name: postgre
+  name: fakeshop
 spec:
   selector:
-    app: posgre
+    app: fakeshop
   ports:
-  - port: 5432
-    targetPort: 5432
+  - port: 80
+    targetPort: 5000
+  type: LoadBalancer
