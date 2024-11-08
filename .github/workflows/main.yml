@@ -42,7 +42,7 @@ jobs:
        with:
           aws-access-key0id: ${{ secrets.AWS_ACCESS_KEY_ID }}    
           aws-access-key0id: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2    
+          aws-region: us-east-1    
        
       -name:  Configurar o kubectl
        run: echo "Executando aws eks update-kubeconfig
