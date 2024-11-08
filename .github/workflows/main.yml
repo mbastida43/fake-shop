@@ -36,8 +36,14 @@ jobs:
     steps:
       -name: Obter o codigo do projeto
       uses: actions@ckeckout@v4
+      
       -name: Autenticar na AWS
-       run: echo "Executando o comando aws configure"
+       uses: aws_action/onfigure-aws-credentials@v4
+       with:
+          aws-access-key0id: ${{ secrets.AWS_ACCESS_KEY_ID }}    
+          aws-access-key0id: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2    
+       
       -name:  Configurar o kubectl
        run: echo "Executando aws eks update-kubeconfig
       -name: Deploy dos manifestos no Kubernetes
