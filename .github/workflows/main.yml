@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 jobs:
   ci:
-    run ons: ubuntu-latest
+    runs-ons: ubuntu-latest
     steps:
     - name: Obter o codigo do projeto
-      uses: actions@ckeckout@v4
+      uses: actions@checkout@v4
 
     - name: Autenticar no Docker Hub
       uses: docker/login-action@v3
@@ -28,7 +28,7 @@ jobs:
           marlonbastida/fake-shop:v${{ github.run_number }}
 
   cd:
-    run ons: ubuntu-latest
+    runs-ons: ubuntu-latest
     needs: [ci]
     permissions:
       id-token: write
