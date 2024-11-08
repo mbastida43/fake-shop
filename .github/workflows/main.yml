@@ -34,6 +34,8 @@ jobs:
     run ons: ubuntu-latest
     needs: [ci]
     steps:
+      -name: Obter o codigo do projeto
+      uses: actions@ckeckout@v4
       -name: Autenticar na AWS
        run: echo "Executando o comando aws configure"
       -name:  Configurar o kubectl
