@@ -33,6 +33,10 @@ jobs:
   cd:
     run ons: ubuntu-latest
     needs: [ci]
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
     steps:
       -name: Obter o codigo do projeto
        uses: actions@ckeckout@v4
