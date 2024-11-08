@@ -8,14 +8,14 @@ jobs:
   ci:
     run ons: ubuntu-latest
     steps:
-      -name: Obter o codigo do projeto
-      uses: actions@ckeckout@v4
+    -name: Obter o codigo do projeto
+    uses: actions@ckeckout@v4
       
-      -name: Autenticar no Docker Hub
-       uses: docker/login-actopn@v3
-       with:
-         username: ${{ secrets.DOCKERHUB_USERNAME }} 
-         password: ${{ secrets.DOCKERHUB_TOKEN }} 
+    -name: Autenticar no Docker Hub
+    uses: docker/login-actopn@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }} 
+        password: ${{ secrets.DOCKERHUB_TOKEN }} 
 
        -name: Construção e envio da imagem Docker
         uses: docker/build-push-action@v6
