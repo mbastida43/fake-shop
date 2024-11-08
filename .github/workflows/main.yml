@@ -11,7 +11,7 @@ jobs:
     -name: Obter o codigo do projeto
     uses: actions@ckeckout@v4
     -name: Autenticar no Docker Hub
-    uses: docker/login-actopn@v3
+    uses: docker/login-actiopn@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }} 
         password: ${{ secrets.DOCKERHUB_TOKEN }} 
