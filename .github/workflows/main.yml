@@ -12,12 +12,12 @@ jobs:
       uses: actions@ckeckout@v4
       
       -name: Autenticar no Docker Hub
-      uses: docker/login-actopn@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }} 
-        password: ${{ secrets.DOCKERHUB_TOKEN }} 
+       uses: docker/login-actopn@v3
+       with:
+         username: ${{ secrets.DOCKERHUB_USERNAME }} 
+         password: ${{ secrets.DOCKERHUB_TOKEN }} 
 
-      -name: Construção e envio da imagem Docker
+       -name: Construção e envio da imagem Docker
        run: echo "Executando o comando Docker build"
 
        name: build and push
@@ -35,7 +35,7 @@ jobs:
     needs: [ci]
     steps:
       -name: Obter o codigo do projeto
-      uses: actions@ckeckout@v4
+       uses: actions@ckeckout@v4
       
       -name: Autenticar na AWS
        uses: aws_action/onfigure-aws-credentials@v4
