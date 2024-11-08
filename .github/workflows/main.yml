@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Obter o codigo do projeto
-      uses: actions@checkout@v4
+      uses: actions/checkout@v4
 
     - name: Autenticar no Docker Hub
       uses: docker/login-action@v3
@@ -36,7 +36,7 @@ jobs:
       actions: read
     steps:
       - name: Obter o codigo do projeto
-        uses: actions@checkout@v4
+        uses: actions/checkout@v4
 
       - name: Autenticar na AWS
         uses: aws_action/configure-aws-credentials@v4
