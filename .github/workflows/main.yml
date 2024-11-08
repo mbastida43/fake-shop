@@ -10,7 +10,6 @@ jobs:
     steps:
     -name: Obter o codigo do projeto
     uses: actions@ckeckout@v4
-      
     -name: Autenticar no Docker Hub
     uses: docker/login-actopn@v3
       with:
