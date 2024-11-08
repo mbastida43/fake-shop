@@ -1,5 +1,6 @@
 name: CI-CD
 
+
 on:
   push: 
      branches: ["main"]
@@ -50,3 +51,5 @@ jobs:
 
       - name: Deploy dos manifestos no Kubernetes
       run: echo "Executando o comando kubectl apply"
+
+
