@@ -12,7 +12,7 @@ jobs:
       uses: actions@ckeckout@v4
       
     - name: Autenticar no Docker Hub
-      uses: docker/login-actiopn@v3
+      uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }} 
         password: ${{ secrets.DOCKERHUB_TOKEN }} 
@@ -36,7 +36,7 @@ jobs:
       actions: read
     steps:
       - name: Obter o codigo do projeto
-        uses: actions@ckeckout@v4
+        uses: actions@checkout@v4
       
       - name: Autenticar na AWS
         uses: aws_action/onfigure-aws-credentials@v4
