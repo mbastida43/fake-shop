@@ -55,3 +55,4 @@ jobs:
             ./k8s/deployment.yaml
           images: |
             marlonbastida/fake-shop:v${{ github.run_number }}
+
